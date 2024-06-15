@@ -1,6 +1,17 @@
-# CI4-NewsWeb
-Untuk memenuhi tugas UAS Pemrograman Website Lanjut, tugas ini berupa website berita yang dibuat dengan CodeIgniter 4 dan MySQL dan menggunakan multirole
+# Dibuat Oleh :
+- Nama  : Septian Nur Ikhsan
+- NIM   : 22091397049
+- Kelas : MI 2022 B
 
+Website berita seputar teknologi yang dibuat dengan CodeIgniter 4 dan AdminLTE 3 dengan MySQL, digunakan sebagai pemenuhan tugas UAS Semester 4 Mata Kuliah Pemrograman Website Lanjut yang diampu oleh Pak Asmunin, S.Kom., M.Kom.  
+
+# Perhatian :
+1. Bisa langsung masuk menggunakan
+   - Username : admin / pengelola
+   - Password : password
+2. Fitur yang ada pada Admin tidak sama dengan Pengelola
+3. File Public dan Vendor tidak dalam masuk ke dalam repositori GitHub
+4. Sesuaikan database
 
 
 # Tampilan halaman login dan register
