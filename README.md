@@ -1,38 +1,68 @@
-# CI4-NewsWeb
-Untuk memenuhi tugas UAS Pemrograman Website Lanjut, tugas ini berupa website berita yang dibuat dengan CodeIgniter 4 dan MySQL dan menggunakan multirole
+# CodeIgniter 4 Application Starter
 
+## What is CodeIgniter?
 
+CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
+More information can be found at the [official site](https://codeigniter.com).
 
-Tampilan halaman login dan register
+This repository holds a composer-installable app starter.
+It has been built from the
+[development repository](https://github.com/codeigniter4/CodeIgniter4).
 
+More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
 
-![Screenshot (686)](https://github.com/SeptianNurIkhsan/CI4-NewsWeb/assets/114415096/563e6ca6-80e3-41c9-86cb-d3f5520ad122)
+You can read the [user guide](https://codeigniter.com/user_guide/)
+corresponding to the latest version of the framework.
 
-![Screenshot (687)](https://github.com/SeptianNurIkhsan/CI4-NewsWeb/assets/114415096/ef111900-79db-4453-b701-925a55318a9a)
+## Installation & updates
 
-![Screenshot (694)](https://github.com/SeptianNurIkhsan/CI4-NewsWeb/assets/114415096/97138238-6627-49b9-b06d-3d9ee3fb6cfa)
+`composer create-project codeigniter4/appstarter` then `composer update` whenever
+there is a new release of the framework.
 
+When updating, check the release notes to see if there are any changes you might need to apply
+to your `app` folder. The affected files can be copied or merged from
+`vendor/codeigniter4/framework/app`.
 
+## Setup
 
-Tampilan Beranda Admin dan Pengelola
+Copy `env` to `.env` and tailor for your app, specifically the baseURL
+and any database settings.
 
+## Important Change with index.php
 
-![Screenshot (688)](https://github.com/SeptianNurIkhsan/CI4-NewsWeb/assets/114415096/2bd74742-8f36-4650-887f-66dd94c50c1a)
-![Screenshot (689)](https://github.com/SeptianNurIkhsan/CI4-NewsWeb/assets/114415096/1ef5ff4a-bc5d-4047-a027-e70193f8fd8b)
-![Screenshot (690)](https://github.com/SeptianNurIkhsan/CI4-NewsWeb/assets/114415096/2553564e-ade5-44bb-b7b9-5c969d503a64)
+`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
+for better security and separation of components.
 
+This means that you should configure your web server to "point" to your project's *public* folder, and
+not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
+framework are exposed.
 
+**Please** read the user guide for a better explanation of how CI4 works!
 
-Tampilan Fitur Untuk Admin, Admin Dapat Melihat Berita Yang Diposting Pengelola dan Menghapusnya
+## Repository Management
 
+We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
+We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
+FEATURE REQUESTS.
 
-![Screenshot (699)](https://github.com/SeptianNurIkhsan/CI4-NewsWeb/assets/114415096/c8a3e396-6722-4843-82dc-ef1ec11786c7)
+This repository is a "distribution" one, built by our release preparation script.
+Problems with it can be raised on our forum, or as issues in the main repository.
 
+## Server Requirements
 
+PHP version 8.1 or higher is required, with the following extensions installed:
 
-Tampilan Fitur Untuk Pengelola, Pengelola Dapat Menulis Berita dan Mengeditnya
-![Screenshot (691)](https://github.com/SeptianNurIkhsan/CI4-NewsWeb/assets/114415096/08acb5bc-6e11-4ec0-b602-0b506d2ea8ba)
-![Screenshot (692)](https://github.com/SeptianNurIkhsan/CI4-NewsWeb/assets/114415096/18421fed-df9b-435b-b3b8-42f0152213c0)
-![Screenshot (693)](https://github.com/SeptianNurIkhsan/CI4-NewsWeb/assets/114415096/893b73c4-64d2-4c9c-a294-77db36895831)
+- [intl](http://php.net/manual/en/intl.requirements.php)
+- [mbstring](http://php.net/manual/en/mbstring.installation.php)
 
+> [!WARNING]
+> - The end of life date for PHP 7.4 was November 28, 2022.
+> - The end of life date for PHP 8.0 was November 26, 2023.
+> - If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
+> - The end of life date for PHP 8.1 will be December 31, 2025.
 
+Additionally, make sure that the following extensions are enabled in your PHP:
+
+- json (enabled by default - don't turn it off)
+- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
+- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
